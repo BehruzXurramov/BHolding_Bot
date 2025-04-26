@@ -251,7 +251,7 @@ bot.action(/editmessage_(.+)/, async (ctx) => {
     if (!owner) return;
     await ctx.answerCbQuery();
     await ctx.reply(
-      `OK. Send me the message you want to set for this bot. Maximum possible character length: 3500.`
+      `OK. Send me the message you want to set for this bot. Maximum possible character length: 2000.`
     );
     users.data[ctx.from.id].status = `2#${token}`;
     users.save();
@@ -332,7 +332,7 @@ bot.on(message("text"), async (ctx) => {
       users.save();
 
       await ctx.reply(
-        `✅ Your bot @${result.username} has been registered!\nSend your custom notification message now, or use /cancel to skip. Maximum possible character length: 3500.\n(Default message is: “Sorry, this bot is not active at the moment.”)`
+        `✅ Your bot @${result.username} has been registered!\nSend your custom notification message now, or use /cancel to skip. Maximum possible character length: 2000.\n(Default message is: “Sorry, this bot is not active at the moment.”)`
       );
     } else if (status.startsWith("2")) {
       const token = status.split("#")[1];
@@ -350,9 +350,9 @@ bot.on(message("text"), async (ctx) => {
         );
         users.data[ctx.from.id].status = "0";
         users.save();
-      } else if (message.length > 3500) {
+      } else if (message.length > 2000) {
         await ctx.reply(
-          `The number of characters in this message (${message.length}) is too long. Maximum possible character length: 3500. Please shorten it and try sending it again:`
+          `The number of characters in this message (${message.length}) is too long. Maximum possible character length: 2000. Please shorten it and try sending it again:`
         );
       } else {
         users.data[ctx.from.id].bots[token] = message;
