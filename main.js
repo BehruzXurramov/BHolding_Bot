@@ -11,6 +11,10 @@ const URL = process.env.APP_URL;
 const app = express();
 app.use(express.json());
 
+app.get("/test", (req, res) => {
+  res.send("Server is running. Test endpoint is working.");
+});
+
 app.post("/bot", async (req, res) => {
   try {
     const { id, token } = req.query;
