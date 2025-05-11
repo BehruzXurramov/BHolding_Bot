@@ -4,7 +4,7 @@ const { bot, users } = require("./bot");
 const { sendMessage } = require("./functions");
 
 const BOT_API_TOKEN = process.env.BOT_API_TOKEN;
-const WEBHOOK_PATH = `/mybot/${BOT_API_TOKEN}`;
+const WEBHOOK_PATH = `/mybot`;
 const PORT = process.env.PORT || 3000;
 const URL = process.env.APP_URL;
 
