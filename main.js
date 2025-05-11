@@ -5,7 +5,7 @@ const { sendMessage } = require("./functions");
 
 const BOT_API_TOKEN = process.env.BOT_API_TOKEN;
 const WEBHOOK_PATH = `/mybot/${BOT_API_TOKEN}`;
-const PORT = process.env.PORT || 5775;
+const PORT = process.env.PORT || 3000;
 const URL = process.env.APP_URL;
 
 const app = express();
