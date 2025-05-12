@@ -53,7 +53,7 @@ app.post("/bot", async (req, res) => {
             process.env.ADMIN_ID,
             `Error:\n\n${result.data}`
           );
-          console.error(error);
+          console.error(result.data);
         }
       }
     }
@@ -65,6 +65,7 @@ app.post("/bot", async (req, res) => {
       `Error:\n\n${error.message}`
     );
     console.error(error);
+    return res.sendStatus(200);
   }
 });
 
