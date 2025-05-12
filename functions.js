@@ -48,7 +48,7 @@ async function deleteWebhook(token) {
     await axios.get(`${TELEGRAM_API_URL}${token}/deleteWebhook`);
     return { ok: true };
   } catch (error) {
-    errorHandler(error);
+    return errorHandler(error);
   }
 }
 
@@ -60,7 +60,7 @@ async function sendMessage(token, chatId, text) {
     });
     return { ok: true };
   } catch (error) {
-    errorHandler(error);
+    return errorHandler(error);
   }
 }
 
